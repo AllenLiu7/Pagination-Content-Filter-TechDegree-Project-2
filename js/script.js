@@ -61,6 +61,8 @@ $('button').on('click', function(){
   //loop through the list to find the student name that match the input
   for (let i=0; i<studentItems.length; i+=1) {
     if ($('.student-item').eq(i).find('h3').text() === search) {
+      // remove "No result", if there are any
+      $('.noresult').remove()
       //'block' the match one, and hide the ohters
       studentItems[i].style.display = 'block';
     } else {
@@ -69,7 +71,9 @@ $('button').on('click', function(){
   }
   // if there is no matches, display 'No results'
   if ($("[style='display: block;']").length === 0) {
-    $('.student-list').append('<p>No results</p>');
+    // remove "No result", if there are any
+    $('.noresult').remove()
+    $('.student-list').append('<p class="noresult">No results</p>');
   }
   // pagination based on the result list
   if ($('div').hasClass('pagination'))  {
@@ -82,7 +86,7 @@ $('button').on('click', function(){
 $('input').on('keyup', function(){
   const search = $('input').val();
   for (let i=0; i<studentItems.length; i+=1) {
-    if ($('.student-item').eq(i).find('h3').text() === search) {
+    if ($('.student-item').eq(i).find('h3').text().includes(search)) {
       studentItems[i].style.display = 'block';
     } else {
       studentItems[i].style.display = 'none';
