@@ -87,9 +87,16 @@ $('input').on('keyup', function(){
   const search = $('input').val();
   for (let i=0; i<studentItems.length; i+=1) {
     if ($('.student-item').eq(i).find('h3').text().includes(search)) {
+      // remove "No result", if there are any
+      $('.noresult').remove()
       studentItems[i].style.display = 'block';
     } else {
       studentItems[i].style.display = 'none';
+    }
+    if ($("[style='display: block;']").length === 0) {
+      // remove "No result", if there are any
+      $('.noresult').remove()
+      $('.student-list').append('<p class="noresult">No results</p>');
     }
   }
   if ($('div').hasClass('pagination'))  {
