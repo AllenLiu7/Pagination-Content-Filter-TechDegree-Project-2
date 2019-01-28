@@ -1,0 +1,25 @@
+{
+  "name": "techdegree-project-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllenLiu7/TechDegree-Project-2.git"
+  },
+  "author": "Allen Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AllenLiu7/TechDegree-Project-2/issues"
+  },
+  "homepage": "https://github.com/AllenLiu7/TechDegree-Project-2#readme",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
